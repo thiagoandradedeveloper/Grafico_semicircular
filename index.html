@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chart" id="chartS"></div>
+        <div class="text" id="texto">0.00%</div>
+    </div>
+    <script>
+        let chartS = document.getElementById('chartS');
+        let texto  = document.getElementById('texto');
+        chartS.style.transition = '0.5s';
+        setInterval(mudar,4000);
+        function mudar(){
+            let min = 0;
+            let max = 100;
+            let pocentagem1 = Math.random()*100;
+            let pocentagem2 = -135 + pocentagem1 * 1.8;
+            chartS.style.transform = 'rotate(' + pocentagem2 + 'deg)';
+            texto.innerText = pocentagem1.toFixed(2) + '%';
+        }
+        mudar();
+    </script>
+</body>
+</html>
